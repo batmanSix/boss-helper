@@ -1,0 +1,75 @@
+{
+  "name": "boss-helper",
+  "version": "1.2.1",
+  "description": "工具库",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "sideEffects": "false",
+  "author": "Simon",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "api": "api-extractor run",
+    "test": "jest --coverage --verbose -u",
+    "lint": "eslint --ext .js,.ts --format=pretty ./src",
+    "lint:fix": "eslint --fix --ext .js,.ts --format=pretty ./src",
+    "changelog": "gulp changelog",
+    "version": "yarn changelog && git add CHANGELOG.md",
+    "release": "yarn test && yarn build && np --no-cleanup --yolo --any-branch",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@microsoft/api-extractor": "^7.23.0",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/fs-extra": "^9.0.13",
+    "@types/gulp": "^4.0.9",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.25",
+    "@yueqing/lint": "^2.2.0",
+    "chalk": "^4.1.2",
+    "conventional-changelog": "^3.1.25",
+    "fs-extra": "^10.1.0",
+    "gulp": "^4.0.2",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.4.0",
+    "np": "^7.6.1",
+    "rollup": "^2.70.2",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.17.9",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.33.0"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix --format=pretty"
+    ]
+  }
+}
