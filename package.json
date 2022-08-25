@@ -18,6 +18,10 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batmanSix/boss-helper.git"
+  },
   "scripts": {
     "build": "gulp build",
     "api": "api-extractor run",
@@ -26,7 +30,7 @@
     "lint:fix": "eslint --fix --ext .js,.ts --format=pretty ./src",
     "changelog": "gulp changelog",
     "version": "yarn changelog && git add CHANGELOG.md",
-    "release": "yarn test && yarn build && np --no-cleanup --yolo --any-branch",
+    "release": "yarn build && np --no-cleanup --yolo --any-branch",
     "prepare": "husky install"
   },
   "devDependencies": {

@@ -193,6 +193,28 @@
             "startIndex": 1,
             "endIndex": 2
           }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "boss-helper!helloUpperCase:var",
+          "docComment": "/**\n * 返回 helloUpperCase 开头的字符串\n *\n * @param str - input string\n *\n * @returns 'HELLO xxx' 的大写\n *\n * @example\n * ```ts\n * hello('ts') => 'HELLO TS'\n * ```\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "helloUpperCase: "
+            },
+            {
+              "kind": "Content",
+              "text": "(str: string) => string"
+            }
+          ],
+          "isReadonly": true,
+          "releaseTag": "Beta",
+          "name": "helloUpperCase",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
         }
       ]
     }
