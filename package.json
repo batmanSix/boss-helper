@@ -12,7 +12,7 @@
     "README.md"
   ],
   "sideEffects": "false",
-  "author": "Simon",
+  "author": "kangbo",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
