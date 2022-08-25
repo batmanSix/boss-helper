@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/batmanSix/boss-helper.git"
+    "url": "https://github.com/batmanSix/boss-helper.git"
   },
   "scripts": {
     "build": "gulp build",
