@@ -5,28 +5,29 @@ type EnumDataRecord = Record<PropertyKey, any>
 
 type TransformArrayToObject<
   Tuple extends EnumDataList,
+  // eslint-disable-next-line @typescript-eslint/ban-types
   Result extends EnumDataRecord = {},
 > = Tuple extends []
   ? Result // last call
   : Tuple extends readonly [infer Head, ...infer Tail]
   ? Head extends readonly [infer Key, infer Value, infer Text]
-    ? Tail extends EnumDataList
-      ? Value extends PropertyKey
-        ? Key extends PropertyKey
-          ? TransformArrayToObject<
-              Tail,
-              Result & Record<Value, Text> & Record<Key, Value>
-            > // recursive call
-          : Result
-        : Result
-      : Result
-    : Result
+  ? Tail extends EnumDataList
+  ? Value extends PropertyKey
+  ? Key extends PropertyKey
+  ? TransformArrayToObject<
+    Tail,
+    Result & Record<Value, Text> & Record<Key, Value>
+  > // recursive call
+  : Result
+  : Result
+  : Result
+  : Result
   : Result
 
 type ReadonlyMergedRecord<T> = T extends EnumDataRecord
   ? {
-      readonly [K in keyof T]: T[K]
-    }
+    readonly [K in keyof T]: T[K]
+  }
   : never
 
 /** @beta */
